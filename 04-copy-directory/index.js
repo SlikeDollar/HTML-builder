@@ -10,7 +10,7 @@ async function copyDir(srcPath = srcDir, destPath = destDir) {
   }
 
   await fs.rm(destPath, { recursive: true, force: true });
-  await fs.mkdir(destPath, { recursive: true });
+  await fs.mkdir(destPath);
 
   fs.readdir(srcPath, { withFileTypes: true }).then(files => {
     files.forEach(dirent => {
